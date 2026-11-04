@@ -1,0 +1,584 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A visão dos seres vivos</title>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f1f6f3;
+  color: #26352e;
+  line-height: 1.7;
+}
+
+header {
+  background: #174d3a;
+  color: white;
+  text-align: center;
+  padding: 45px 20px;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+nav {
+  background: #103a2b;
+  padding: 12px;
+  text-align: center;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 12px;
+  font-weight: bold;
+}
+
+nav a:hover {
+  color: #a8e6c2;
+}
+
+main {
+  max-width: 1000px;
+  margin: auto;
+  padding: 25px 20px;
+}
+
+section {
+  margin-bottom: 45px;
+}
+
+h2 {
+  color: #174d3a;
+  margin-bottom: 15px;
+  border-bottom: 2px solid #a8d8b9;
+  padding-bottom: 8px;
+}
+
+.card {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 3px 10px #00000012;
+}
+
+.card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 12px;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.curiosidade {
+  background: #dcefe3;
+  padding: 18px;
+  border-left: 5px solid #39865e;
+  border-radius: 8px;
+  margin: 15px 0;
+}
+
+#quiz {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 3px 10px #00000012;
+}
+
+#progresso {
+  color: #557363;
+  margin-bottom: 15px;
+}
+
+#pergunta {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 18px;
+}
+
+.opcao {
+  display: block;
+  width: 100%;
+  text-align: left;
+  background: #f1f6f3;
+  border: 2px solid #d2e3d8;
+  border-radius: 8px;
+  padding: 13px;
+  margin: 10px 0;
+  cursor: pointer;
+  font-size: 1rem;
+  color: #26352e;
+}
+
+.opcao:hover:not(:disabled) {
+  background: #dcefe3;
+  border-color: #39865e;
+}
+
+.opcao:disabled {
+  cursor: default;
+}
+
+.opcao.certa {
+  background: #d7f5df;
+  border-color: #278443;
+}
+
+.opcao.errada {
+  background: #ffe0e0;
+  border-color: #c74a4a;
+}
+
+button.principal {
+  background: #174d3a;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 25px;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 15px;
+}
+
+button.principal:hover {
+  background: #267653;
+}
+
+#feedback {
+  margin-top: 15px;
+  font-weight: bold;
+}
+
+#resultado {
+  text-align: center;
+  padding: 20px;
+}
+
+#resultado h3 {
+  color: #174d3a;
+  font-size: 1.8rem;
+}
+
+footer {
+  background: #103a2b;
+  color: white;
+  text-align: center;
+  padding: 25px;
+}
+
+@media (max-width: 600px) {
+  header h1 {
+    font-size: 1.8rem;
+  }
+
+  nav a {
+    display: inline-block;
+    margin: 5px;
+  }
+
+  .card img {
+    height: 210px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>A visão dos seres vivos</h1>
+  <p>Descubra como diferentes animais enxergam o mundo!</p>
+</header>
+
+<nav>
+  <a href="#introducao">Introdução</a>
+  <a href="#animais">Animais</a>
+  <a href="#curiosidades">Curiosidades</a>
+  <a href="#quiz">Quiz</a>
+</nav>
+
+<main>
+
+<section id="introducao">
+  <h2>Como funciona a visão?</h2>
+
+  <p>
+    A visão é um dos sentidos que permite aos seres vivos perceberem
+    o ambiente ao seu redor. Nos animais, ela pode ajudar a encontrar
+    alimento, reconhecer outros indivíduos, identificar perigos e
+    se orientar no espaço.
+  </p>
+
+  <p>
+    A luz entra nos olhos e é captada por células sensíveis à luz.
+    Essas células transformam a informação luminosa em sinais que
+    são enviados ao sistema nervoso, onde são interpretados.
+  </p>
+
+  <p>
+    Entretanto, nem todos os seres vivos enxergam da mesma maneira.
+    A estrutura dos olhos e a capacidade de perceber cores, movimentos
+    e luz variam bastante entre as espécies.
+  </p>
+</section>
+
+<section id="animais">
+  <h2>Como diferentes animais enxergam?</h2>
+
+  <div class="cards">
+
+    <article class="card">
+      <img src="https://images.unsplash.com/photo-1474511320723-9a56873867b5?auto=format&fit=crop&w=900&q=80"
+           alt="Raposa em ambiente natural">
+      <h3>Os cães</h3>
+      <p>
+        Os cães possuem uma visão adaptada para perceber movimentos
+        e enxergar em ambientes com pouca luz. Eles distinguem
+        algumas cores, principalmente tons de azul e amarelo.
+      </p>
+    </article>
+
+    <article class="card">
+      <img src="https://images.unsplash.com/photo-1552728089-57bdde30beb3?auto=format&fit=crop&w=900&q=80"
+           alt="Arara com penas coloridas">
+      <h3>As aves</h3>
+      <p>
+        Muitas aves possuem uma visão muito desenvolvida.
+        Algumas espécies conseguem perceber a luz ultravioleta,
+        que é invisível para os seres humanos.
+      </p>
+    </article>
+
+    <article class="card">
+      <img src="https://images.unsplash.com/photo-1573865526739-10659fec78a5?auto=format&fit=crop&w=900&q=80"
+           alt="Gato observando atentamente">
+      <h3>Os gatos</h3>
+      <p>
+        Os gatos conseguem enxergar relativamente bem em ambientes
+        com pouca iluminação. Seus olhos possuem adaptações que
+        aproveitam melhor a luz disponível.
+      </p>
+    </article>
+
+    <article class="card">
+      <img src="https://images.unsplash.com/photo-1546182990-dffeafbe841d?auto=format&fit=crop&w=900&q=80"
+           alt="Leão em seu ambiente natural">
+      <h3>Os felinos</h3>
+      <p>
+        Muitos felinos possuem uma camada refletora atrás da retina,
+        chamada tapetum lucidum. Ela ajuda a aproveitar a luz e
+        contribui para a visão em ambientes escuros.
+      </p>
+    </article>
+
+  </div>
+</section>
+
+<section id="curiosidades">
+  <h2>Curiosidades científicas</h2>
+
+  <div class="curiosidade">
+    <h3>As abelhas e a luz ultravioleta</h3>
+    <p>
+      As abelhas conseguem perceber a luz ultravioleta. Algumas flores
+      apresentam padrões visíveis para elas que ajudam a indicar
+      onde está o néctar.
+    </p>
+  </div>
+
+  <div class="curiosidade">
+    <h3>Os camaleões e seus olhos</h3>
+    <p>
+      Os camaleões conseguem movimentar os olhos de maneira
+      independente, permitindo observar diferentes direções
+      quase ao mesmo tempo.
+    </p>
+  </div>
+
+  <div class="curiosidade">
+    <h3>As borboletas</h3>
+    <p>
+      As borboletas possuem olhos compostos, formados por muitas
+      pequenas unidades visuais. Elas conseguem perceber movimentos
+      e, em várias espécies, diferentes comprimentos de onda da luz.
+    </p>
+  </div>
+
+  <div class="curiosidade">
+    <h3>Os polvos</h3>
+    <p>
+      Os polvos possuem olhos bem desenvolvidos e conseguem perceber
+      contrastes e movimentos. Sua visão de cores é diferente
+      da visão humana.
+    </p>
+  </div>
+</section>
+
+<section id="quiz">
+  <h2>Quiz: teste seus conhecimentos!</h2>
+  <p>Responda às perguntas e descubra quantos pontos consegue fazer.</p>
+
+  <div id="jogo">
+    <p id="progresso"></p>
+    <p id="pergunta"></p>
+    <div id="opcoes"></div>
+    <p id="feedback" aria-live="polite"></p>
+    <button id="proximo" class="principal" hidden>
+      Próxima pergunta
+    </button>
+  </div>
+
+  <div id="resultado" hidden>
+    <h3>Quiz concluído!</h3>
+    <p id="pontuacao"></p>
+    <p id="mensagem"></p>
+    <button id="reiniciar" class="principal">
+      Refazer o quiz
+    </button>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <p>Projeto de Ciências — A visão dos seres vivos</p>
+</footer>
+
+<script>
+const perguntas = [
+  {
+    pergunta: "Qual é a principal função da visão?",
+    opcoes: [
+      "Perceber o ambiente por meio da luz",
+      "Produzir energia para o corpo",
+      "Controlar a temperatura corporal",
+      "Produzir sons para comunicação"
+    ],
+    correta: 0,
+    explicacao: "A visão permite perceber informações luminosas do ambiente."
+  },
+  {
+    pergunta: "Quais cores os cães distinguem melhor?",
+    opcoes: [
+      "Vermelho e verde",
+      "Azul e amarelo",
+      "Roxo e rosa",
+      "Todas as cores igualmente"
+    ],
+    correta: 1,
+    explicacao: "Os cães distinguem principalmente tons de azul e amarelo."
+  },
+  {
+    pergunta: "O que algumas aves conseguem enxergar que nós não vemos?",
+    opcoes: [
+      "Som",
+      "Ondas de rádio",
+      "Luz ultravioleta",
+      "Ondas sonoras"
+    ],
+    correta: 2,
+    explicacao: "Algumas aves conseguem perceber a luz ultravioleta."
+  },
+  {
+    pergunta: "Por que os gatos enxergam bem em ambientes pouco iluminados?",
+    opcoes: [
+      "Porque não precisam de luz",
+      "Porque possuem adaptações para aproveitar melhor a luz",
+      "Porque enxergam apenas em preto e branco",
+      "Porque seus olhos produzem luz"
+    ],
+    correta: 1,
+    explicacao: "Seus olhos aproveitam melhor a luz disponível."
+  },
+  {
+    pergunta: "Qual estrutura ajuda muitos felinos a aproveitar a luz?",
+    opcoes: [
+      "Tapetum lucidum",
+      "Pupila artificial",
+      "Córnea colorida",
+      "Nervo auditivo"
+    ],
+    correta: 0,
+    explicacao: "O tapetum lucidum reflete a luz de volta pela retina."
+  },
+  {
+    pergunta: "Como os camaleões conseguem observar diferentes direções?",
+    opcoes: [
+      "Movimentando os olhos independentemente",
+      "Girando a cabeça completamente",
+      "Usando antenas",
+      "Fechando um olho por vez"
+    ],
+    correta: 0,
+    explicacao: "Seus olhos podem se movimentar de forma independente."
+  },
+  {
+    pergunta: "Como são chamados os olhos das borboletas?",
+    opcoes: [
+      "Olhos simples",
+      "Olhos compostos",
+      "Olhos refletores",
+      "Olhos microscópicos"
+    ],
+    correta: 1,
+    explicacao: "Os olhos compostos são formados por muitas pequenas unidades visuais."
+  },
+  {
+    pergunta: "Qual animal possui olhos desenvolvidos e visão de cores diferente da humana?",
+    opcoes: [
+      "Polvo",
+      "Minhoca",
+      "Esponja-do-mar",
+      "Água-viva"
+    ],
+    correta: 0,
+    explicacao: "Os polvos possuem olhos desenvolvidos, mas sua visão de cores é diferente da humana."
+  }
+];
+
+let indice = 0;
+let pontos = 0;
+let respondeu = false;
+
+const progresso = document.getElementById("progresso");
+const pergunta = document.getElementById("pergunta");
+const opcoes = document.getElementById("opcoes");
+const feedback = document.getElementById("feedback");
+const proximo = document.getElementById("proximo");
+const jogo = document.getElementById("jogo");
+const resultado = document.getElementById("resultado");
+
+function mostrarPergunta() {
+  respondeu = false;
+
+  const atual = perguntas[indice];
+
+  progresso.textContent =
+    "Pergunta " + (indice + 1) + " de " + perguntas.length;
+
+  pergunta.textContent = atual.pergunta;
+  feedback.textContent = "";
+  opcoes.innerHTML = "";
+  proximo.hidden = true;
+
+  atual.opcoes.forEach(function(opcao, i) {
+    const botao = document.createElement("button");
+
+    botao.className = "opcao";
+    botao.textContent = String.fromCharCode(65 + i) + ") " + opcao;
+
+    botao.onclick = function() {
+      verificarResposta(i, botao);
+    };
+
+    opcoes.appendChild(botao);
+  });
+}
+
+function verificarResposta(escolha, botao) {
+  if (respondeu) return;
+
+  respondeu = true;
+
+  const atual = perguntas[indice];
+  const botoes = document.querySelectorAll(".opcao");
+
+  botoes.forEach(function(b, i) {
+    b.disabled = true;
+
+    if (i === atual.correta) {
+      b.classList.add("certa");
+    }
+  });
+
+  if (escolha === atual.correta) {
+    pontos++;
+    feedback.textContent = "Muito bem! " + atual.explicacao;
+  } else {
+    botao.classList.add("errada");
+    feedback.textContent = "Não foi dessa vez. " + atual.explicacao;
+  }
+
+  proximo.hidden = false;
+
+  if (indice === perguntas.length - 1) {
+    proximo.textContent = "Ver minha pontuação";
+  }
+}
+
+function proximaPergunta() {
+  if (!respondeu) return;
+
+  indice++;
+
+  if (indice < perguntas.length) {
+    mostrarPergunta();
+  } else {
+    mostrarResultado();
+  }
+}
+
+function mostrarResultado() {
+  jogo.hidden = true;
+  resultado.hidden = false;
+
+  const porcentagem = Math.round(
+    pontos / perguntas.length * 100
+  );
+
+  document.getElementById("pontuacao").textContent =
+    "Você acertou " + pontos + " de " + perguntas.length +
+    " perguntas (" + porcentagem + "%).";
+
+  let mensagem;
+
+  if (pontos === perguntas.length) {
+    mensagem = "Excelente! Você acertou todas as perguntas!";
+  } else if (pontos >= perguntas.length / 2) {
+    mensagem = "Muito bem! Você já conhece bastante sobre a visão dos seres vivos.";
+  } else {
+    mensagem = "Continue explorando o site e tente novamente para aprender ainda mais!";
+  }
+
+  document.getElementById("mensagem").textContent = mensagem;
+}
+
+function reiniciarQuiz() {
+  indice = 0;
+  pontos = 0;
+
+  jogo.hidden = false;
+  resultado.hidden = true;
+
+  mostrarPergunta();
+}
+
+proximo.addEventListener("click", proximaPergunta);
+
+document.getElementById("reiniciar").addEventListener(
+  "click",
+  reiniciarQuiz
+);
+
+mostrarPergunta();
+</script>
+
+</body>
+</html>
